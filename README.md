@@ -21,6 +21,37 @@ curl https://raw.githubusercontent.com/amimoto-ami/scaffold-movefile/master/run.
 Then you will get YAML text like following. So copy and paste into your local Movefile.
 
 ```
+local:
+  vhost: http://vccw.dev
+  wordpress_path: /var/www/wordpress
+  database:
+    name: wordpress
+    user: wordpress
+    password: wordpress
+    host: localhost
+    charset: utf8
+production:
+  vhost: https://example.com
+  wordpress_path: /var/www/vhosts/xxxxxxxxxx
+  database:
+    name: xxxxxxxxxxxxxxx
+    user: xxxxxxxxxxx
+    password: xxxxxxxxxxxxxxxxxxxxx
+    host: localhost
+    charset: utf8
+  exclude:
+    - .git/
+    - .gitignore
+    - .sass-cache/
+    - bin/
+    - 'tmp/*'
+    - 'Gemfile*'
+    - Movefile
+    - wp-config.php
+    - 'wp-content/*.sql'
+  ssh:
+    host: example.com
+    user: ec2-user
 ```
 
 You should edit SSH account or so in Movefile. :smile:
